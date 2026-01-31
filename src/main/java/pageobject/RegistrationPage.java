@@ -1,4 +1,5 @@
 package pageobject;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -16,31 +17,45 @@ public class RegistrationPage {
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
     }
-
+    @Step
     public void clickFieldName(){ driver.findElement(fieldName).click();}
+    @Step
     public void completeFieldName(String name) {
         driver.findElement(fieldName).sendKeys(name);
     }
+    @Step
     public void clickFieldEmail(){ driver.findElement(fieldEmail).click();}
+    @Step
     public void completeFieldEmail(String email) {
         driver.findElement(fieldEmail).sendKeys(email);
     }
+    @Step
     public void clickFieldPassword(){ driver.findElement(fieldPassword).click();}
+    @Step
     public void completeFieldPassword(String password) {
         driver.findElement(fieldPassword).sendKeys(password);
     }
+    @Step
     public void getTextWrongPassword(){
         driver.findElement(wrongPassword).getText();
         assertEquals(WRONG_PASSWORD, wrongPassword);
     }
-    private void assertEquals(String wrongPassword, By wrongPassword1) {
+    private void assertEquals(String wrongPassword, By wrongPasswordOne) {
     }
+    @Step
+    public void getTextButtonInRegistrationForm(){
+        driver.findElement(buttonRegistrationInRegistrationForm).getText();
+        assertEquals("Зарегистрироваться", buttonRegistrationInRegistrationForm);
+    }
+    @Step
     public void clickButtonRegistration() {
         driver.findElement(buttonRegistration).click();
     }
+    @Step
     public void clickButtonRegistrationInRegistrationForm() {
         driver.findElement(buttonRegistrationInRegistrationForm).click();
     }
+    @Step
     public void clickButtonEntranceRegistrationFormAndPasswordRecovery() {
         driver.findElement(buttonEntranceRegistrationFormAndPasswordRecovery).click();
     }

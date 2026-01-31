@@ -6,7 +6,7 @@ import browser.DriverHelper;
 
 import java.io.IOException;
 
-public class BaseTest {
+public class BaseTest{
     protected WebDriver driver;
     @Before
     public void startUp() throws IOException{

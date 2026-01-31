@@ -1,4 +1,5 @@
 package pageobject;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -15,11 +16,21 @@ public class LocatorsPage {
     public void openMainPage() {
         driver.get("https://stellarburgers.education-services.ru");
     }
+    @Step
     public void clickButtonEntranceLK() {
         driver.findElement(buttonEntranceLK).click();
     }
+    @Step
     public void clickButtonForgotPassword() {
         driver.findElement(buttonForgotPassword).click();
+    }
+
+    @Step
+    public void getTextButtonEntranceLK() {
+        driver.findElement(buttonEntranceLK).getText();
+        assertEquals("Войти", buttonEntranceLK);
+    }
+    private void assertEquals(String войти, By buttonEntranceLK) {
     }
 
 }
