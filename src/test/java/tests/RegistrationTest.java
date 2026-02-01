@@ -1,4 +1,5 @@
 package tests;
+import api.StepsCreateUser;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
@@ -57,6 +58,8 @@ public class RegistrationTest {
     }
     @After
     public void afterCode(){
+        StepsCreateUser stepsCreateUser = new StepsCreateUser();
+        stepsCreateUser.userDelete();
         driver.quit();
     }
 }

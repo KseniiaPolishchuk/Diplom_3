@@ -17,45 +17,45 @@ public class RegistrationPage {
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
     }
-    @Step
+    @Step("Нажатие на поле 'Имя'")
     public void clickFieldName(){ driver.findElement(fieldName).click();}
-    @Step
+    @Step("Ввод текста в поле 'Имя'")
     public void completeFieldName(String name) {
         driver.findElement(fieldName).sendKeys(name);
     }
-    @Step
+    @Step("Нажатие на поле 'Email'")
     public void clickFieldEmail(){ driver.findElement(fieldEmail).click();}
-    @Step
+    @Step("Ввод текста в поле 'Email'")
     public void completeFieldEmail(String email) {
         driver.findElement(fieldEmail).sendKeys(email);
     }
-    @Step
+    @Step("Нажатие на поле 'Пароль'")
     public void clickFieldPassword(){ driver.findElement(fieldPassword).click();}
-    @Step
+    @Step("Ввод текста в поле 'Пароль'")
     public void completeFieldPassword(String password) {
         driver.findElement(fieldPassword).sendKeys(password);
     }
-    @Step
+    @Step("Получение текста ошибки при неправильном пароле и сравнение с ожидаемым текстом")
     public void getTextWrongPassword(){
         driver.findElement(wrongPassword).getText();
         assertEquals(WRONG_PASSWORD, wrongPassword);
     }
     private void assertEquals(String wrongPassword, By wrongPasswordOne) {
     }
-    @Step
+    @Step("Получение текста кнопки 'Зарегистрироваться' в форме регистрации и сравнение его с ожидаемым текстом")
     public void getTextButtonInRegistrationForm(){
         driver.findElement(buttonRegistrationInRegistrationForm).getText();
         assertEquals("Зарегистрироваться", buttonRegistrationInRegistrationForm);
     }
-    @Step
+    @Step("Нажатие на кнопку 'Зарегистрироваться'")
     public void clickButtonRegistration() {
         driver.findElement(buttonRegistration).click();
     }
-    @Step
+    @Step("Нажатие на кнопку 'Зарегистрироваться' в форме регистрации")
     public void clickButtonRegistrationInRegistrationForm() {
         driver.findElement(buttonRegistrationInRegistrationForm).click();
     }
-    @Step
+    @Step("Нажатие на кнопку 'Войти' в форме регистрации и в форме востановления пароля")
     public void clickButtonEntranceRegistrationFormAndPasswordRecovery() {
         driver.findElement(buttonEntranceRegistrationFormAndPasswordRecovery).click();
     }

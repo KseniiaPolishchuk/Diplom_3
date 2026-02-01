@@ -16,21 +16,20 @@ public class LocatorsPage {
     public void openMainPage() {
         driver.get("https://stellarburgers.education-services.ru");
     }
-    @Step
+    @Step("Нажатие на кнопку 'Войти'")
     public void clickButtonEntranceLK() {
         driver.findElement(buttonEntranceLK).click();
     }
-    @Step
+    @Step("Нажатие на кнопку 'Восстановить пароль'")
     public void clickButtonForgotPassword() {
         driver.findElement(buttonForgotPassword).click();
     }
 
-    @Step
+    @Step("Получение текста кнопки 'Войти' и его сравнение с ожидаемым текстом" )
     public void getTextButtonEntranceLK() {
         driver.findElement(buttonEntranceLK).getText();
         assertEquals("Войти", buttonEntranceLK);
     }
     private void assertEquals(String войти, By buttonEntranceLK) {
     }
-
 }

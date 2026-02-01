@@ -14,23 +14,23 @@ public class MainPage {
     public MainPage(WebDriver driver) {
         this.driver = driver;
     }
-    @Step
+    @Step("Нажатие на кнопку 'Войти в аккаунт'")
     public void clickButtonEntranceManePage() {
         driver.findElement(buttonEntranceManePage).click();
     }
-    @Step
+    @Step("Нажатие на кнопку личного кабинета")
     public void clickButtonEntrancePersonalAccount() {
         driver.findElement(buttonEntrancePersonalAccount).click();
     }
-    @Step
+    @Step("Нажатие на раздел 'Булки'")
     public void clickFieldBun() {
         driver.findElement(fieldBun).click();
     }
-    @Step
+    @Step("Нажатие на раздел 'Соусы'")
     public void clickFieldSauces() {
        driver.findElement(fieldSauces).click();
     }
-    @Step
+    @Step("Получение текста раздела 'Соусы' и сравнение его с ожидаемым текстом")
     public void getTextSectionSauces(){
         driver.findElement(fieldSauces).getText();
         assertEquals("Соусы", fieldSauces);
@@ -38,17 +38,17 @@ public class MainPage {
 
     private void assertEquals(String соусы, By fieldSauces) {
     }
-    @Step
+    @Step("Получение текста раздела 'Начинки' и сравнение его с ожидаемым текстом")
     public void getTextSectionFillings(){
         driver.findElement(fieldFillings).getText();
         assertEquals("Начинки", fieldFillings);
     }
-    @Step
+    @Step("Получение текста раздела 'Булки' и сравнение его с ожидаемым текстом")
     public void getTextSectionBun(){
         driver.findElement(fieldBun).getText();
         assertEquals("Булки", fieldBun);
     }
-    @Step
+    @Step("Нажатие на раздел 'Начинки'")
     public void clickFieldFillings() {
         driver.findElement(fieldFillings).click();
     }
